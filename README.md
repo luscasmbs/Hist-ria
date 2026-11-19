@@ -18,7 +18,8 @@ Para uma prévia HTTP local, execute `npm run preview` e abra <http://127.0.0.1:
 ## Publicar
 
 - **GitHub Pages:** envie `index.html`, `style.css` e `script.js` para um repositório. Em **Settings → Pages**, escolha **Deploy from a branch**, a branch desejada e a pasta **/(root)**. Os caminhos relativos também funcionam em subpastas.
-- **Netlify:** arraste uma pasta contendo esses três arquivos para a área de publicação manual. Não há comando de build. Se conectar o repositório e editar apenas TypeScript, use `npm run build` e diretório de publicação `.`.
+- **Vercel:** importe este repositório e escolha a branch `codex/aquilombar`, com o diretório raiz do projeto em `.`. O arquivo `vercel.json` define o preset **Other**, instalação com `npm ci`, build com `npm run build` e saída em **dist**. Remova configurações antigas que apontem para outra pasta raiz. O build publica apenas `index.html`, `style.css` e `script.js`; não é preciso iniciar um servidor ou definir variáveis de ambiente.
+- **Netlify:** para publicação manual, arraste uma pasta contendo esses três arquivos. Se conectar o repositório, use `npm run build` e diretório de publicação `dist`.
 
 ## Conteúdo e dados
 

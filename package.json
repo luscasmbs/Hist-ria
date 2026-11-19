@@ -4,7 +4,7 @@
   "private": true,
   "description": "Quilombo digital — Dia da Consciência Negra",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node build.mjs",
     "check": "tsc --noEmit",
     "preview": "node preview.cjs"
   },
