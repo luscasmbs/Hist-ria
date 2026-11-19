@@ -1,12 +1,12 @@
 # Aquilombar — memória, presença e futuro
 
-Site estático de uma página sobre o Dia da Consciência Negra, em português do Brasil. Sem servidor de aplicação, fotos externas ou dependências em produção. Ilustrações em CSS/SVG; mapa derivado da malha oficial do IBGE.
+Site estático de uma página sobre o Dia da Consciência Negra, em português do Brasil. Sem servidor de aplicação ou dependências em produção. Ilustrações em CSS/SVG, fotografias licenciadas armazenadas localmente e mapa derivado da malha oficial do IBGE.
 
 ## Abrir e editar
 
-Abra **index.html** no navegador. Mantenha **style.css** e **script.js** na mesma pasta. A página funciona sem compilação; as fontes Google Fonts precisam de internet e têm alternativas locais.
+Abra **index.html** no navegador. Mantenha **style.css**, **script.js**, **assets/** e **data/** na mesma pasta. A página funciona sem compilação; as fontes Google Fonts precisam de internet e têm alternativas locais.
 
-O código-fonte é **script.ts** (TypeScript estrito). Para alterá-lo e gerar novamente o JavaScript:
+O código-fonte está em **script.ts** e **content-data.ts** (TypeScript estrito). O segundo arquivo contém as referências, os créditos e o retrato estatístico incorporado. Para alterá-los e gerar novamente o JavaScript:
 
 ```sh
 npm ci
@@ -17,13 +17,17 @@ Para uma prévia HTTP local, execute `npm run preview` e abra <http://127.0.0.1:
 
 ## Publicar
 
-- **GitHub Pages:** envie `index.html`, `style.css` e `script.js` para um repositório. Em **Settings → Pages**, escolha **Deploy from a branch**, a branch desejada e a pasta **/(root)**. Os caminhos relativos também funcionam em subpastas.
-- **Vercel:** importe este repositório e escolha a branch `codex/aquilombar`, com o diretório raiz do projeto em `.`. O arquivo `vercel.json` define o preset **Other**, instalação com `npm ci`, build com `npm run build` e saída em **dist**. Remova configurações antigas que apontem para outra pasta raiz. O build publica apenas `index.html`, `style.css` e `script.js`; não é preciso iniciar um servidor ou definir variáveis de ambiente.
-- **Netlify:** para publicação manual, arraste uma pasta contendo esses três arquivos. Se conectar o repositório, use `npm run build` e diretório de publicação `dist`.
+- **GitHub Pages:** publique os três arquivos da página junto com as pastas `assets/` e `data/`. Em **Settings → Pages**, escolha **Deploy from a branch**, a branch desejada e a pasta **/(root)**. Os caminhos relativos também funcionam em subpastas.
+- **Vercel:** importe este repositório e escolha a branch `codex/aquilombar`, com o diretório raiz do projeto em `.`. O arquivo `vercel.json` define **Other**, instalação com `npm ci`, build com `npm run build` e saída em **dist**. O build inclui as imagens, os créditos e os dados; não é preciso iniciar um servidor ou definir variáveis de ambiente.
+- **Netlify:** para publicação manual, arraste a pasta `dist/` gerada pelo build. Se conectar o repositório, use `npm run build` e diretório de publicação `dist`.
 
 ## Conteúdo e dados
 
-As fontes estão no rodapé. Os quatro indicadores `[XX%]` e os dados de cada UF são **placeholders intencionais**. Antes de preenchê-los, consulte as edições mais recentes/revisadas do IBGE e registre ano, tabela, recorte e link. Localidades, comunidades e territórios não são a mesma unidade. Os comentários `<!-- VERIFICAR -->` assinalam etimologias ou origens sem consenso. Não há números estatísticos inventados.
+Os indicadores usam a **3ª edição de Desigualdades Sociais por Cor ou Raça no Brasil**, divulgada pelo IBGE em 18/11/2026, com dados de 2025. O mapa usa o **Censo 2022, segunda apuração, SIDRA 9578**, consultado em 19/11/2026. Os dados estão incorporados ao JavaScript e registrados em [data/quilombolas-censo-2022.json](data/quilombolas-censo-2022.json). Os links e recortes aparecem na página; veja também [FONTES.md](FONTES.md).
+
+Pessoas, comunidades e territórios não são a mesma unidade. O mapa apresenta pessoas quilombolas por UF e pessoas quilombolas em territórios oficialmente delimitados, sem chamar esses números de quantidade de comunidades. Os comentários `<!-- VERIFICAR -->` permanecem nas etimologias ou origens historicamente debatidas.
+
+Cada personalidade tem referências biográficas e créditos da imagem. As 12 fotografias, a foto do busto de Maria Firmina e as duas representações simbólicas estão em `assets/portraits/`; veja [IMAGE_CREDITS.md](IMAGE_CREDITS.md). Não há fotografia histórica conhecida sendo substituída por retrato imaginado sem identificação: Dandara e Tereza estão expressamente sinalizadas como representações simbólicas, e Maria Firmina como busto em homenagem.
 
 O SVG do mapa já está incorporado ao HTML. O utilitário opcional `generate-map.py` permite regenerá-lo a partir de `brasil-uf.geojson`, obtido na [API de malhas do IBGE](https://servicodados.ibge.gov.br/api/docs/malhas?versao=3), com país `BR`, `intrarregiao=UF`, `qualidade=minima` e formato GeoJSON. Não é necessário para abrir ou publicar.
 

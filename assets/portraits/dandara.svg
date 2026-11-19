@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+<title id="title">Memória de Dandara — representação simbólica</title><desc id="desc">Composição original com uma silhueta feminina e padrões geométricos. Não representa uma aparência histórica documentada.</desc>
+<defs><pattern id="p" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M0 40L40 0L80 40L40 80Z" fill="none" stroke="#F5EDE0" stroke-opacity=".18" stroke-width="2"/></pattern></defs>
+<path fill="#2F5D3A" d="M0 0h640v640H0z"/><path fill="url(#p)" d="M0 0h640v640H0z"/><circle cx="330" cy="265" r="190" fill="#E0A526"/>
+<path d="M115 640C124 485 193 450 273 431L280 375C233 342 208 303 220 238C233 170 296 139 354 159C408 178 432 211 433 265L455 302L426 315C418 352 393 375 354 384L365 430C470 461 524 514 535 640Z" fill="#1A1410"/>
+<path d="M211 254C173 181 207 115 274 98C341 81 391 117 416 174C357 150 310 155 282 192C258 218 240 237 211 254Z" fill="#C0582B"/>
+<path d="M223 158L382 136M221 183L398 159" fill="none" stroke="#F5EDE0" stroke-width="7"/>
+<circle cx="376" cy="331" r="16" fill="none" stroke="#E0A526" stroke-width="8"/>
+<path d="M218 477L319 560L415 477M249 505L319 607L384 508" fill="none" stroke="#C0582B" stroke-width="15"/>
+</svg>

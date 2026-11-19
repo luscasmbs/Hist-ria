@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+<title id="title">Memória de Tereza de Benguela — representação simbólica</title><desc id="desc">Composição original com uma silhueta feminina, folhas e formas geométricas. Não representa uma aparência histórica documentada.</desc>
+<defs><pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M0 0L60 60M60 0L0 60" fill="none" stroke="#E0A526" stroke-opacity=".17" stroke-width="2"/></pattern></defs>
+<path fill="#773B25" d="M0 0h640v640H0z"/><path fill="url(#p)" d="M0 0h640v640H0z"/><circle cx="320" cy="270" r="190" fill="#E0A526"/>
+<path d="M103 640C115 509 197 454 274 438L280 375C231 352 209 311 210 252C211 189 256 146 319 145C389 144 429 194 428 255C428 312 405 353 361 375L366 438C455 456 523 512 540 640Z" fill="#1A1410"/>
+<path d="M209 249C173 189 206 127 241 106C247 66 301 73 319 104C350 59 411 81 408 125C455 146 462 197 430 244C402 186 258 172 209 249Z" fill="#2F5D3A"/>
+<path d="M231 167L319 130L408 167M245 185L319 156L393 185" fill="none" stroke="#F5EDE0" stroke-width="7"/>
+<path d="M237 470L320 527L404 470M265 499L320 574L376 499" fill="none" stroke="#E0A526" stroke-width="12"/>
+<path d="M73 480V312M73 359L42 333M73 394L111 360M567 480V312M567 359L598 333M567 394L529 360" stroke="#F5EDE0" stroke-opacity=".5" stroke-width="8" fill="none"/>
+</svg>

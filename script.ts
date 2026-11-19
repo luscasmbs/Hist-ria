@@ -108,7 +108,11 @@
     $('#people-count').textContent = `${visible.length} ${visible.length === 1 ? 'trajetória encontrada' : 'trajetórias encontradas'}`;
     $('#people-grid').innerHTML = visible.length ? visible.map((person, i) => {
       const color = ['#2F5D3A','#773B25','#51432B','#3B4C43'][i % 4];
-      return `<button class="person-card" aria-pressed="false" aria-label="Conhecer a história de ${escapeHTML(person.name)}"><span class="person-inner"><span class="person-front"><span class="initial-art" style="--person-color:${color}" aria-hidden="true"><span>${person.initials}</span></span><span class="person-caption"><strong>${person.name}</strong><small>${person.area}</small><span class="flip-icon" aria-hidden="true">+</span></span></span><span class="person-back" aria-hidden="true"><strong>${person.name}</strong><span class="person-bio">${person.bio}</span><small>Toque para voltar</small></span></span></button>`;
+      const reference = personSources[person.name];
+      const kind = reference.kind === 'Fotografia' ? '' : `<span class="portrait-kind">${escapeHTML(reference.kind)}</span>`;
+      const sourceLink = reference.imageSource ? `<a href="${escapeHTML(reference.imageSource)}" target="_blank" rel="noopener noreferrer">Arquivo original</a> · ` : '';
+      const license = reference.licenseUrl ? `<a href="${escapeHTML(reference.licenseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(reference.license)}</a>` : escapeHTML(reference.license);
+      return `<article class="person-entry"><button class="person-card" aria-pressed="false" aria-label="Conhecer a história de ${escapeHTML(person.name)}. ${escapeHTML(reference.kind)}."><span class="person-inner"><span class="person-front"><span class="portrait-art" style="--person-color:${color};--portrait-position:${reference.position}"><img src="${reference.image}" alt="${escapeHTML(reference.alt)}" width="640" height="640" loading="lazy" decoding="async">${kind}</span><span class="person-caption"><strong>${person.name}</strong><small>${person.area}</small><span class="flip-icon" aria-hidden="true">+</span></span></span><span class="person-back" aria-hidden="true"><strong>${person.name}</strong><span class="person-bio">${person.bio}</span><small>Toque para voltar</small></span></span></button><details class="person-reference"><summary>Fontes e imagem</summary><p><a href="${escapeHTML(reference.bioSource)}" target="_blank" rel="noopener noreferrer">${escapeHTML(reference.bioLabel)}</a></p><p class="portrait-credit">${escapeHTML(reference.author)}<br>${sourceLink}${license}</p>${reference.kind !== 'Fotografia' ? `<p>${escapeHTML(reference.alt)}</p>` : ''}</details></article>`;
     }).join('') : '<p class="empty-state">Nenhum nome encontrado. Experimente outra busca ou outra área.</p>';
   }
   $('#people-filters').addEventListener('click', event => {
@@ -126,7 +130,7 @@
     button.querySelector('.person-front')!.setAttribute('aria-hidden', String(flipped));
     button.querySelector('.person-back')!.setAttribute('aria-hidden', String(!flipped));
     const name = button.querySelector('strong')!.textContent;
-    button.setAttribute('aria-label', flipped ? `${name}. ${button.querySelector('.person-bio')!.textContent} Toque para voltar.` : `Conhecer a história de ${name}`);
+    button.setAttribute('aria-label', flipped ? `${name}. ${button.querySelector('.person-bio')!.textContent} Toque para voltar.` : `Conhecer a história de ${name}. ${personSources[name!].kind}.`);
   });
 
   interface Word {word: string;meaning: string;origin: string;verify?: boolean;}
@@ -167,6 +171,13 @@
     const state = states.find(state => state[0] === code);
     if (!state) return;
     stateSelect.value = code;$('#state-name').textContent = state[2];
+    const data = quilombolaStates[code];
+    $('#state-population').textContent = data.population.toLocaleString('pt-BR');
+    $('#state-in-territories').textContent = data.inTerritories.toLocaleString('pt-BR');
+    $('#state-share').textContent = `${data.share.toLocaleString('pt-BR', {minimumFractionDigits:2,maximumFractionDigits:2})}%`;
+    $('#state-context').textContent = data.population === 0
+      ? 'O Censo 2022 não registrou população quilombola nesta UF. O zero é um resultado do levantamento, não uma declaração sobre a inexistência de comunidades ou identidades.'
+      : 'A população quilombola inclui pessoas dentro e fora de territórios oficialmente delimitados. O recorte territorial não corresponde ao total de comunidades existentes.';
     $$('#brazil-map .map-state').forEach(path => {
       const selected = path.dataset.code === code;
       path.classList.toggle('selected', selected);path.setAttribute('aria-pressed', String(selected));
@@ -195,7 +206,7 @@
     {question:'João Cândido foi uma liderança de qual movimento?',options:['Revolta dos Malês','Revolta da Chibata','Frente Negra Brasileira'],correct:1,explanation:'Em 1910, João Cândido liderou marinheiros na luta contra os castigos físicos na Marinha.'},
     {question:'A palavra “caçula” tem origem em qual língua?',options:['Quimbundo','Latim','Francês'],correct:0,explanation:'Caçula vem do quimbundo, uma das línguas africanas que contribuíram para o português brasileiro.'},
     {question:'Qual afirmação reconhece a cultura afro-brasileira como presença viva?',options:['Ela pertence somente aos museus','Todas as tradições são iguais','Comunidades a recriam e a transmitem no cotidiano'],correct:2,explanation:'Na roda, no terreiro, na literatura e na cozinha, conhecimentos são preservados e reinventados por pessoas e comunidades.'},
-    {question:'O que é preciso fazer antes de preencher os indicadores deste site?',options:['Estimar um número que pareça razoável','Consultar o IBGE e registrar ano, recorte e fonte','Copiar qualquer postagem sem conferir'],correct:1,explanation:'Uma leitura responsável das desigualdades precisa de dados verificáveis, com contexto, recorte racial e fonte identificados.'}
+    {question:'Como consultar indicadores de desigualdade com responsabilidade?',options:['Estimar um número que pareça razoável','Consultar o IBGE e registrar ano, recorte e fonte','Copiar qualquer postagem sem conferir'],correct:1,explanation:'Uma leitura responsável das desigualdades precisa de dados verificáveis, com contexto, recorte racial e fonte identificados. Os indicadores desta página usam dados de 2025 divulgados pelo IBGE em 2026.'}
   ];
   let questionIndex = 0;
   let score = 0;

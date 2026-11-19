@@ -1,0 +1,175 @@
+{
+  "source": "IBGE · Censo Demográfico 2022 · SIDRA 9578 · segunda apuração",
+  "url": "https://sidra.ibge.gov.br/tabela/9578",
+  "consultedAt": "2026-11-19",
+  "variables": {
+    "population": "4709, classificação 2661 = 32776 (total)",
+    "inTerritories": "4709, classificação 2661 = 60027 (em territórios quilombolas)",
+    "share": "4728, classificação 2661 = 32776 (percentual na população da UF)"
+  },
+  "note": "O sinal - da tabela representa zero absoluto. Territórios oficialmente delimitados são um recorte territorial, não o total de comunidades existentes.",
+  "states": {
+    "11": {
+      "name": "Rondônia",
+      "population": 2925,
+      "inTerritories": 221,
+      "share": 0.18
+    },
+    "12": {
+      "name": "Acre",
+      "population": 0,
+      "inTerritories": 0,
+      "share": 0
+    },
+    "13": {
+      "name": "Amazonas",
+      "population": 2812,
+      "inTerritories": 1231,
+      "share": 0.07
+    },
+    "14": {
+      "name": "Roraima",
+      "population": 0,
+      "inTerritories": 0,
+      "share": 0
+    },
+    "15": {
+      "name": "Pará",
+      "population": 135603,
+      "inTerritories": 44560,
+      "share": 1.67
+    },
+    "16": {
+      "name": "Amapá",
+      "population": 12894,
+      "inTerritories": 4909,
+      "share": 1.76
+    },
+    "17": {
+      "name": "Tocantins",
+      "population": 13077,
+      "inTerritories": 1328,
+      "share": 0.87
+    },
+    "21": {
+      "name": "Maranhão",
+      "population": 269168,
+      "inTerritories": 29142,
+      "share": 3.97
+    },
+    "22": {
+      "name": "Piauí",
+      "population": 31786,
+      "inTerritories": 8419,
+      "share": 0.97
+    },
+    "23": {
+      "name": "Ceará",
+      "population": 23994,
+      "inTerritories": 4609,
+      "share": 0.27
+    },
+    "24": {
+      "name": "Rio Grande do Norte",
+      "population": 22371,
+      "inTerritories": 3450,
+      "share": 0.68
+    },
+    "25": {
+      "name": "Paraíba",
+      "population": 16765,
+      "inTerritories": 2922,
+      "share": 0.42
+    },
+    "26": {
+      "name": "Pernambuco",
+      "population": 78864,
+      "inTerritories": 6769,
+      "share": 0.87
+    },
+    "27": {
+      "name": "Alagoas",
+      "population": 37724,
+      "inTerritories": 691,
+      "share": 1.21
+    },
+    "28": {
+      "name": "Sergipe",
+      "population": 28163,
+      "inTerritories": 12748,
+      "share": 1.27
+    },
+    "29": {
+      "name": "Bahia",
+      "population": 397502,
+      "inTerritories": 20771,
+      "share": 2.81
+    },
+    "31": {
+      "name": "Minas Gerais",
+      "population": 135315,
+      "inTerritories": 4576,
+      "share": 0.66
+    },
+    "32": {
+      "name": "Espírito Santo",
+      "population": 15659,
+      "inTerritories": 2793,
+      "share": 0.41
+    },
+    "33": {
+      "name": "Rio de Janeiro",
+      "population": 20447,
+      "inTerritories": 3500,
+      "share": 0.13
+    },
+    "35": {
+      "name": "São Paulo",
+      "population": 11006,
+      "inTerritories": 4076,
+      "share": 0.02
+    },
+    "41": {
+      "name": "Paraná",
+      "population": 7113,
+      "inTerritories": 648,
+      "share": 0.06
+    },
+    "42": {
+      "name": "Santa Catarina",
+      "population": 4449,
+      "inTerritories": 580,
+      "share": 0.06
+    },
+    "43": {
+      "name": "Rio Grande do Sul",
+      "population": 17552,
+      "inTerritories": 2617,
+      "share": 0.16
+    },
+    "50": {
+      "name": "Mato Grosso do Sul",
+      "population": 2572,
+      "inTerritories": 1145,
+      "share": 0.09
+    },
+    "51": {
+      "name": "Mato Grosso",
+      "population": 11729,
+      "inTerritories": 958,
+      "share": 0.32
+    },
+    "52": {
+      "name": "Goiás",
+      "population": 30391,
+      "inTerritories": 5106,
+      "share": 0.43
+    },
+    "53": {
+      "name": "Distrito Federal",
+      "population": 305,
+      "inTerritories": 0,
+      "share": 0.01
+    }
+  }
+}

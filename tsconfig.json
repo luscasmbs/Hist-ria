@@ -9,5 +9,5 @@
     "noEmitOnError": true,
     "forceConsistentCasingInFileNames": true
   },
-  "files": ["script.ts"]
+  "files": ["content-data.ts", "script.ts"]
 }
