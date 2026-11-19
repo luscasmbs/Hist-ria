@@ -1,0 +1,12 @@
+{
+  "name": "aquilombar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quilombo digital — Dia da Consciência Negra",
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "preview": "node preview.cjs"
+  },
+  "devDependencies": { "typescript": "^5.9.3" }
+}
